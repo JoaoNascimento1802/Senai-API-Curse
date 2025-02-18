@@ -69,6 +69,120 @@ Para usar **Senai-API-Curse**, siga estas etapas:
     http://localhost:8080
     ```
 
+
+## 📅 Seeding do Banco de Dados
+
+Para realizar o seeding do banco de dados no **Senai-API-Curse**, siga os passos abaixo para configurar as tabelas e inserir dados de exemplo.
+
+1. Crie o banco de dados:
+
+    ```sql
+    CREATE DATABASE bancoteste;
+    ```
+
+2. Verifique as tabelas:
+
+    ```sql
+    SHOW TABLES;
+    ```
+
+3. Descreva as tabelas para verificar a estrutura:
+
+    ```sql
+    DESC tb_atividade;
+    DESC tb_bloco;
+    DESC tb_categoria;
+    DESC tb_participante;
+    DESC tb_participante_atividade;
+    ```
+
+4. Insira categorias no banco de dados:
+
+    ```sql
+    INSERT INTO tb_categoria (descricao) VALUES 
+        ('Palestra'), 
+        ('Curso'), 
+        ('Oficina'), 
+        ('Seminário'), 
+        ('Workshop');
+    ```
+
+5. Insira atividades:
+
+    ```sql
+    INSERT INTO tb_atividade (nome, descricao, preco, categoria_id) 
+    VALUES 
+        ('Curso de Java', 'Aprenda Java do zero', 50.00, 2),
+        ('Oficina de Design Gráfico', 'Workshop sobre design digital', 30.00, 3),
+        ('Palestra sobre IA', 'Inteligência Artificial no mercado', 0.00, 1),
+        ('Seminário de Ciência de Dados', 'Técnicas avançadas de análise de dados', 20.00, 4),
+        ('Workshop de UX/UI', 'Melhores práticas de experiência do usuário', 40.00, 5),
+        ('Curso de Spring Boot', 'Desenvolvimento web com Spring', 60.00, 2),
+        ('Palestra sobre Cyber Segurança', 'Protegendo dados na internet', 0.00, 1),
+        ('Oficina de Arduino', 'Criando projetos eletrônicos', 35.00, 3);
+    ```
+
+6. Insira participantes:
+
+    ```sql
+    INSERT INTO tb_participante (nome, email) 
+    VALUES 
+        ('Ana Silva', 'ana@email.com'),
+        ('Carlos Souza', 'carlos@email.com'),
+        ('Mariana Oliveira', 'mariana@email.com'),
+        ('José Ferreira', 'jose@email.com'),
+        ('Lucas Martins', 'lucas@email.com'),
+        ('Fernanda Costa', 'fernanda@email.com'),
+        ('Ricardo Mendes', 'ricardo@email.com'),
+        ('Patrícia Lima', 'patricia@email.com'),
+        ('Gabriel Rocha', 'gabriel@email.com'),
+        ('Juliana Castro', 'juliana@email.com');
+    ```
+
+7. Insira blocos de horário:
+
+    ```sql
+    INSERT INTO tb_bloco (inicio, fim, atividade_id) 
+    VALUES 
+        ('2025-03-01 09:00:00', '2025-03-01 12:00:00', 1),
+        ('2025-03-01 14:00:00', '2025-03-01 17:00:00', 1),
+        ('2025-03-02 10:00:00', '2025-03-02 12:00:00', 2),
+        ('2025-03-02 14:00:00', '2025-03-02 16:00:00', 3),
+        ('2025-03-03 09:00:00', '2025-03-03 11:00:00', 4),
+        ('2025-03-04 15:00:00', '2025-03-04 18:00:00', 5),
+        ('2025-03-05 08:00:00', '2025-03-05 12:00:00', 6),
+        ('2025-03-06 10:00:00', '2025-03-06 14:00:00', 7),
+        ('2025-03-07 09:30:00', '2025-03-07 11:30:00', 8);
+    ```
+
+8. Inscreva participantes nas atividades:
+
+    ```sql
+    INSERT INTO tb_participante_atividade (participante_id, atividade_id) 
+    VALUES 
+        (1, 1), (1, 2), (1, 3), 
+        (2, 4), (2, 5), 
+        (3, 6), (3, 7), 
+        (4, 8), (4, 1), 
+        (5, 2), (5, 3), 
+        (6, 4), (6, 5), (6, 6), 
+        (7, 7), (7, 8), 
+        (8, 1), (8, 2), 
+        (9, 3), (9, 4), 
+        (10, 5), (10, 6), (10, 7), (10, 8);
+    ```
+
+9. Verifique se os dados foram inseridos corretamente:
+
+    ```sql
+    SELECT * FROM tb_categoria;
+    SELECT * FROM tb_atividade;
+    SELECT * FROM tb_participante;
+    SELECT * FROM tb_bloco;
+    SELECT * FROM tb_participante_atividade;
+    ```
+
+
 Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Forneça uma referência de opções para pontos de bônus!
 
 ## 📫 Contribuindo para Senai-API-Curse
