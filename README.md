@@ -90,7 +90,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 <table>
   <tr>
     <td align="center">
-      <a href="#" title="defina o título do link">
+      <a href="#" title="https://github.com/JoaoNascimento1802">
         <img src="https://i.pinimg.com/736x/6d/83/b9/6d83b96e6f062c57dcbeb3e325ebcd10.jpg" width="100px;" alt="Foto do Emanuel no GitHub"/><br>
         <sub>
           <b>Emanuel</b>
