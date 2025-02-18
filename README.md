@@ -183,8 +183,6 @@ Para realizar o seeding do banco de dados no **Senai-API-Curse**, siga os passos
     ```
 
 
-Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Forneça uma referência de opções para pontos de bônus!
-
 ## 📫 Contribuindo para Senai-API-Curse
 
 Para contribuir com **Senai-API-Curse**, siga estas etapas:
