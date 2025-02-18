@@ -1,6 +1,6 @@
-package repositories;
+package com.des.senai.repositories;
 
-import entities.Bloco;
+import com.des.senai.entities.Bloco;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

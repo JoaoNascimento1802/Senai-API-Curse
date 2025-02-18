@@ -1,6 +1,6 @@
-package repositories;
+package com.des.senai.repositories;
 
-import entities.Participante;
+import com.des.senai.entities.Participante;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

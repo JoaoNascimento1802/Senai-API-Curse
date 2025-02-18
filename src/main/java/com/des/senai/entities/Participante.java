@@ -1,57 +1,42 @@
-package entities;
+package com.des.senai.entities;
 
 import jakarta.persistence.*;
-
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "tb_participante")
+@Table(name = "tb_participante")  // Usa o prefixo "tb_"
 public class Participante {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
+
     private String nome;
     private String email;
 
     @ManyToMany
     @JoinTable(
-            name = "participante_atividade",
+            name = "tb_participante_atividade", // Nome correto da tabela intermediária
             joinColumns = @JoinColumn(name = "participante_id"),
             inverseJoinColumns = @JoinColumn(name = "atividade_id")
     )
     private Set<Atividade> atividades = new HashSet<>();
 
-    public Set<Atividade> getAtividades() {
-        return atividades;
-    }
+    // Construtor padrão
+    public Participante() {}
 
-    public Participante(int id, String nome, String email, Set<Atividade> atividades) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.atividades = atividades;
-    }
-
-    public void setAtividades(Set<Atividade> atividades) {
-        this.atividades = atividades;
-    }
-
-    public Participante() {
-    }
-
-    public Participante(int id, String nome, String email) {
+    public Participante(Integer id, String nome, String email) {
         this.id = id;
         this.nome = nome;
         this.email = email;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -71,5 +56,7 @@ public class Participante {
         this.email = email;
     }
 
-
+    public Set<Atividade> getAtividades() {
+        return atividades;
+    }
 }

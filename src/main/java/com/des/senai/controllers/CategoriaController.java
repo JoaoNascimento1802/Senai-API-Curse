@@ -1,9 +1,10 @@
-package controllers;
+package com.des.senai.controllers;
 
-import entities.Categoria;
+import com.des.senai.entities.Categoria;
+import com.des.senai.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import repositories.CategoriaRepository;
 
 import java.util.List;
 
@@ -20,7 +21,8 @@ public class CategoriaController {
     }
 
     @PostMapping
-    public Categoria adicionarCategoria(@RequestBody Categoria categoria) {
-        return categoriaRepository.save(categoria);
+    public ResponseEntity<Categoria> adicionarCategoria(@RequestBody Categoria categoria) {
+        Categoria novaCategoria = categoriaRepository.save(categoria);
+        return ResponseEntity.ok(novaCategoria);
     }
 }
